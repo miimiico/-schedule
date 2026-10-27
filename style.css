@@ -279,3 +279,48 @@ body {
 .tabs a.on { background: var(--ink); color: var(--paper); }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* ---------- 編輯 ---------- */
+.edit {
+  align-self: start; border: 1px solid var(--line); background: transparent; color: var(--ink-2);
+  font-family: inherit; font-size: 12px; letter-spacing: .1em; padding: 3px 10px; border-radius: 99px; cursor: pointer;
+}
+.edit:active { background: var(--paper-2); }
+.tag.mod { border-color: var(--ink-3); color: var(--ink-3); }
+.wide-btn { width: 100%; margin-top: 12px; padding: 10px 14px; border-style: dashed; }
+.linkbtn {
+  display: block; margin: 14px 2px 0; padding: 0; border: 0; background: none; cursor: pointer;
+  font-family: inherit; font-size: 13px; letter-spacing: .06em; color: var(--sage); text-decoration: underline; text-underline-offset: 3px;
+}
+.linkbtn.danger { color: var(--brick); }
+
+.sheet-bg {
+  position: fixed; inset: 0; z-index: 50; background: rgba(40, 34, 26, .45);
+  display: flex; align-items: flex-end; justify-content: center; overflow-y: auto;
+}
+.sheet {
+  width: 100%; max-width: 520px; max-height: 92vh; overflow-y: auto;
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px 18px 0 0;
+  padding: 20px 18px calc(22px + env(safe-area-inset-bottom));
+  display: grid; gap: 12px; color: var(--ink);
+}
+@media (min-width: 560px) { .sheet-bg { align-items: center; } .sheet { border-radius: 18px; } }
+.sheet h3 { margin: 0; font-weight: 500; font-size: 18px; letter-spacing: .12em; }
+.sheet label { display: grid; gap: 4px; font-size: 12.5px; letter-spacing: .1em; color: var(--ink-2); }
+.sheet input, .sheet select, .sheet textarea {
+  font-family: inherit; font-size: 16px; color: var(--ink); background: var(--paper);
+  border: 1px solid var(--line); border-radius: 10px; padding: 9px 10px; width: 100%; min-width: 0;
+}
+.sheet input:focus, .sheet select:focus, .sheet textarea:focus { outline: none; border-color: var(--sage); }
+.sheet .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.sheet .chkline { display: flex; align-items: center; gap: 8px; font-size: 14px; letter-spacing: .04em; color: var(--ink); }
+.sheet .chkline input { width: 18px; height: 18px; accent-color: var(--sage); }
+.sheet .hint { margin: 0; font-size: 13px; color: var(--ink-2); }
+.sheet textarea { font-size: 12px; font-family: ui-monospace, Menlo, monospace; }
+.sheet .err { min-height: 1.2em; font-size: 13px; color: var(--brick); }
+.sheet .acts { display: flex; flex-wrap: wrap; gap: 8px; }
+.sheet .acts.sub { gap: 6px 18px; margin-top: -4px; }
+.sheet .acts.sub .linkbtn { margin: 0; }
+.btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.sheet [hidden] { display: none !important; }

@@ -15,8 +15,8 @@ window.SCHEDULE = {
     3,
     5
    ],
-   "start": "09:00",
-   "end": "10:00",
+   "start": "21:00",
+   "end": "22:00",
    "from": "2026-10-28",
    "until": null,
    "skip": [],
